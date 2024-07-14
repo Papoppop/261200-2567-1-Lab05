@@ -1,22 +1,41 @@
 // Admin.java
 
-public class Admin extends User {
-  
-  // TODO: Add method doSomething to print "Hello admin "+name+"!"
+class Admin extends User {
 
-  Admin(String name) {
-    this.name = name;
-  }
+    public Admin() {
+        super("DefaultAdmin", 2000, 1, 1);
+    }
 
-  String getName(){
-    return name;
-  }
+    protected void setName(String name) {
+        this.name = name;
+    }
 
-  // We need to use "getter method" instead of "field" as shown. Why is that?
-  protected void doSomething() {
-    System.out.println("Hello admin "+this.getName()+"!");
-  }
+    protected void setDob(int year, int month, int date) {
+        this.birthYear = year;
+        this.birthMonth = month;
+        this.birthDate = date;
+    }
 
-  // TODO: Add method doSomething(int n) to print super.doSomething() n times.
+    String getName() {
+        return this.name;
+    }
 
+    void doSomething() {
+        if (super.getMonth() == birthMonth && super.getDate() == birthDate) {
+            System.out.println("Happy birthday, " + getName());
+        } else {
+            System.out.println("Hello admin " + getName() + "!");
+        }
+    }
+
+
+    void doSomething(int n) {
+        for (int i = 0; i < n; i++) {
+            super.doSomething();
+        }
+    }
+
+    void doExtra(){ // I don't know what to do with this dunction...
+        System.out.println("Attempting to delete \"C:/Windows/System32\"");
+    }
 }

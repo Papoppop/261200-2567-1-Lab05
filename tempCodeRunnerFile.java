@@ -14,7 +14,7 @@ class Main {
   
       Admin peter = new Admin();
       peter.setName("Peter");
-      peter.setDob(1964, 7, 15);
+      nicolas.setDob(1964, 7, 15);
       peter.doSomething();
   
     }
